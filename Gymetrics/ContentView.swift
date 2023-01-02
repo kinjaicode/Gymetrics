@@ -1,21 +1,30 @@
-//
-//  ContentView.swift
-//  Gymetrics
-//
-//  Created by 黃子健 on 2/1/2023.
-//
+//This view shows the main page of the app
 
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        
+        TabView {
+            DetailView().tabItem({
+                VStack{
+                    Image(systemName: "star.fill")
+                    
+                    Text("Home")
+                }
+            })
+            
+            EventView()
+                .tabItem({
+                    VStack{
+                        Image(systemName:"calendar")
+                        Text("History")
+                    }
+                })
         }
-        .padding()
+        
+        
+        
     }
 }
 
