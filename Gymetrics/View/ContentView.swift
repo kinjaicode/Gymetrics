@@ -1,15 +1,11 @@
-//This view shows the main page of the app
-
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        
         TabView {
             DetailView().tabItem({
                 VStack{
                     Image(systemName: "star.fill")
-                    
                     Text("Home")
                 }
             })
@@ -21,12 +17,18 @@ struct ContentView: View {
                         Text("History")
                     }
                 })
-        }
-        
-        
-        
+            
+            MetricsView()
+                .tabItem({
+                    VStack{
+                        Image(systemName: "list.star")
+                        Text("Workout")
+                    }
+                })
+        }.environmentObject(MoveModel())
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
