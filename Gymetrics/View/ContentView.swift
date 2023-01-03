@@ -3,12 +3,13 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            DetailView().tabItem({
-                VStack{
-                    Image(systemName: "star.fill")
-                    Text("Home")
-                }
-            })
+            DetailView()
+                .tabItem({
+                    VStack{
+                        Image(systemName: "star.fill")
+                        Text("Home")
+                    }
+                })
             
             EventView()
                 .tabItem({
@@ -25,9 +26,18 @@ struct ContentView: View {
                         Text("Workout")
                     }
                 })
+            MetricsDetailView()
+                .tabItem({
+                    VStack{
+                        Image(systemName: "star")
+                        Text("Moves")
+                    }
+                })
+            
         }.environmentObject(MoveModel())
     }
 }
+
 
 
 struct ContentView_Previews: PreviewProvider {
